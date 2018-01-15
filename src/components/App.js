@@ -8,6 +8,8 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import DatePicker from 'material-ui/DatePicker';
 import Item from './Item';
+import BottomNav from './BottomNav';
+import FlatButton from 'material-ui/FlatButton';
 
 
 
@@ -42,6 +44,15 @@ class App extends Component {
 							 backgroundColor: '#212121', 
 			 				 height: 40, 
 						}}
+					iconElementRight={
+	    				<FlatButton
+							style={{color:'#fff', lineHeight: '25px', height: '25px', marginTop: '0px'}}
+	    					secondary={true} 
+	    					label="Clear All"
+	    					onClick={() => this.props.clearReminders()}
+	    				>
+	    				</FlatButton>
+	    			}
 					/>
 					<div className="form-wrapper">
 					<form>
@@ -49,6 +60,8 @@ class App extends Component {
 						fullWidth={true}
       					hintText="I have to..."
       					onChange={e => this.setState({text: e.target.value})}
+      					underlineFocusStyle={{borderColor: '#000'}}
+      					underlineStyle={{borderColor: '#fff'}}
       					onKeyPress={ e => {
 	      					if(e.key === 'Enter'){
 	      						e.preventDefault();
@@ -58,7 +71,7 @@ class App extends Component {
     				/>
     				<DatePicker
 				          hintText="MM-DD-YYYY"
-				          style={{display:'inline-block', width:'70%'}}
+				          style={{display:'inline-block', marginRight: '20px', borderColor: "#fff"}}
 				          onChange={(e,date) => this.setState({dueDate : date})}
 				          autoOk={true}
 				        />
@@ -70,12 +83,8 @@ class App extends Component {
     				</form>
     				</div>
     				{this.renderReminders()}
-    				<RaisedButton
-    					label="Clear Reminders"
-    					secondary={true}
-    					onClick={() => this.props.clearReminders()}
-    				>
-    				</RaisedButton>
+
+    				<BottomNav />
 				</MuiThemeProvider>
 			</div>
 			)

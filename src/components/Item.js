@@ -13,7 +13,7 @@ deleteReminder(id){
 render(){
 	const { reminders } = this.props;
 	return (
-			<div className="list-wrapper" style={{margin: '0 40px 0 40px'}}>
+			<div className="list-wrapper" style={{margin: '0 40px 100px 40px'}}>
 				
 					{reminders.map(reminder => {
 						return(

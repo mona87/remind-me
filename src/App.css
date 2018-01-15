@@ -1,5 +1,11 @@
+html{
+	min-height: 100%;
+	   position: relative;
+}
 body{
 	margin:0;
+	font-family: 'Roboto', 'sans-serif';
+	background-color: #B3E5FC;
 }
 
 h1{
@@ -16,4 +22,20 @@ h1{
 	max-width: 500px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+hr{
+	border-color: #fff!important;
+}
+
+.bottom-nav > div >  div{
+	color: #fff!important;
+}
+
+form > {
+	border-color: #fff!important;
+}
+
+.date-picker{
+	background-color: #000;
 }
